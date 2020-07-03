@@ -1,0 +1,3 @@
+def unaAlAzar(lista):
+    elemento = random.choice(lista) #Toma un elemento aleatorio de al lista y devuelve el elemento
+    return elemento
