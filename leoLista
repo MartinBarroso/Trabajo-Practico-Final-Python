@@ -1,0 +1,9 @@
+def leoLista(nombre):
+    archivo = open (nombre+".txt","r")
+    lista=[]
+    
+    for linea in archivo.readlines():
+        lista.append(linea[:-1])
+    archivo.close()
+   
+   return lista
