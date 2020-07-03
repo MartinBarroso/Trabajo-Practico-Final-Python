@@ -21,7 +21,7 @@ def esCorrecta(palabraUsuario, letra, item, items, listaDeTodo):
     else:
         return -5
 
-def JuegaCompu(letraAzar, listaDeTodo):
+def juegaCompu(letraAzar, listaDeTodo):
     salida=[]
     for item in listaDeTodo:
         lista = []
