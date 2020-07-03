@@ -3,7 +3,7 @@ from principal import *
 import math
 import random
 
-def DondeEsta(lista,elemento):
+def dondeEsta(lista,elemento):
     for j in range (len(lista)): #recorro la lista con el len
         if lista[j]==elemento: #busco si el elemento esta en la lista
             return j #devuelve el indice, y si no esta devuelve -1
@@ -39,7 +39,7 @@ def juegaCompu(letraAzar, listaDeTodo):
     return salida
 
 
-def Leolista (nombre): #Funcion LeoLista que pasaron los profes
+def leoLista (nombre): #Funcion LeoLista que pasaron los profes
     f = open(nombre+".txt", "r")
     lista=[]
     lineas=int(f.readline())
