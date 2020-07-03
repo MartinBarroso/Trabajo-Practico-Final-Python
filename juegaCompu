@@ -1,0 +1,18 @@
+def juegaCompu(letraAzar, listaDeTodo):
+    salida=[]
+    
+    for item in listaDeTodo:
+        lista = []
+        for palabra in item:
+            if palabra[0]==letraAzar:
+                lista.append(palabra)
+
+        if len(lista)>0:
+            salida.append(unaAlAzar(lista))
+
+        else:
+            salida.append(" ")
+
+    print (salida)
+    
+    return salida
