@@ -14,14 +14,19 @@ def unaAlAzar(lista):
     elemento = random.choice(lista) #Busca un elemento aleatorio de la lista
     return elemento
 
+
 def esCorrecta(palabraUsuario, letra, item, items, listaDeTodo):
-    pal = items.index(item) #Toma el indice del item en la lista de items
-    if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pal]: #Si la palabraUsuario cumple con la condicion de la primer letra y esta en listaDeTodo, devuelve el puntaje
-        return 10 
+    if len(palabraUsuario)>0: #si el usuario toca solo enter le va a restar 5 puntos
+        pal = items.index(item) #Toma el indice del item en la lista de items
+        if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pal]: #Si la palabraUsuario cumple con la condicion de la primer letra y esta en listaDeTodo, devuelve el puntaje
+            return 10 
+        else:
+            return -5
     else:
         return -5
+    
 
-def juegaCompu(letraAzar, listaDeTodo):
+    def juegaCompu(letraAzar, listaDeTodo):
     salida=[]
     for item in listaDeTodo:
         lista = []
