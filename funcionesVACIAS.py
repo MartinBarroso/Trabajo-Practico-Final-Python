@@ -15,8 +15,8 @@ def unaAlAzar(lista):
     return elemento
 
 def esCorrecta(palabraUsuario, letra, item, items, listaDeTodo):
-    pos = items.index(item) #Toma el indice del item en la lista de items
-    if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pos]: #Si la palabraUsuario cumple con la condicion de la primer letra y esta en listaDeTodo, devuelve el puntaje
+    pal = items.index(item) #Toma el indice del item en la lista de items
+    if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pal]: #Si la palabraUsuario cumple con la condicion de la primer letra y esta en listaDeTodo, devuelve el puntaje
         return 10 
     else:
         return -5
@@ -39,10 +39,13 @@ def JuegaCompu(letraAzar, listaDeTodo):
     return salida
 
 
-def leoLista(nombre):
-    archivo = open (nombre+".txt","r")
+def Leolista (nombre): #Funcion LeoLista que pasaron los profes
+    f = open(nombre+".txt", "r")
     lista=[]
-    for linea in archivo.readlines():
-        lista.append(linea[:-1])
-    archivo.close()
+    lineas=int(f.readline())
+    for i in range(lineas):
+        linea=f.readline()
+        numeros.append(int(linea))
+    f.close()
+    
     return lista
