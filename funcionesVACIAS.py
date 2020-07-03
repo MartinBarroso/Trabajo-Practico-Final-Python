@@ -11,13 +11,13 @@ def DondeEsta(lista,elemento):
     return -1
 
 def unaAlAzar(lista):
-    elemento = random.choice(lista)
+    elemento = random.choice(lista) #Busca un elemento aleatorio de la lista
     return elemento
 
 def esCorrecta(palabraUsuario, letra, item, items, listaDeTodo):
-    pos = items.index(item)
-    if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pos]:
-        return 10
+    pos = items.index(item) #Toma el indice del item en la lista de items
+    if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pos]: #Si la palabraUsuario cumple con la condicion de la primer letra y esta en listaDeTodo, devuelve el puntaje
+        return 10 
     else:
         return -5
 
