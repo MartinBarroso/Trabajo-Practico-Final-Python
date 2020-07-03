@@ -29,16 +29,18 @@ def main():
     candidata = ""
 
     abc=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-    items=["colores","paises","animales"]
-##    colores= lectura("colores")
-##    paises= lectura("paises")
-##    animales= lectura("animales")
+    items=["colores","paises","animales","nombres","frutas","instrumentos"]
 
-    colores=["rojo","azul","amarillo","negro","blanco","celeste","verde","rosa"]
-    paises=["argentina","uruguay","brasil","cuba","venezuela"]
-    animales=["mono","jirafa","gato","perro","jabali","elefante","pez","cocodrilo","rinoceronte","caballo"]
-    listaDeTodo=[colores,paises,animales]
-    print(colores)
+    #Archivos nuevos agregados
+    colores=LeoLista('colores.txt')
+    paises=LeoLista('paises.txt')
+    animales=LeoLista('animales.txt')
+    nombres=LeoLista('nombres.txt')
+    frutas=LeoLista('frutas.txt')
+    instrumentos=LeoLista('instrumentos.txt')
+
+    listaDeTodo=[colores,paises,animales,nombres,frutas,instrumentos]
+
     letraAzar = unaAlAzar(abc)
     palabraUsuario=""
     eleccionUsuario=[]
