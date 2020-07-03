@@ -1,0 +1,6 @@
+def esCorrecta(palabraUsuario, letra, item, items, listaDeTodo):
+    pal = items.index(item) #busca el elemento dado desde el inicio de la lista y devuelve el índice más bajo donde aparece el elemento.
+    if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pal]: #Si la palabra del usuario comienza con la letra y esta en la lista, devuelve el puntaje
+        return 10
+    else:
+        return -5
