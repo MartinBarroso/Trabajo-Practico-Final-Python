@@ -3,54 +3,61 @@ from principal import *
 import math
 import random
 
-def dondeEsta(lista,elemento):
-    for j in range (len(lista)): #recorro la lista con el len
-        if lista[j]==elemento: #busco si el elemento esta en la lista
-            return j #devuelve el indice, y si no esta devuelve -1
-
-    return -1
-
+#Toma un elemento aleatorio de la lista y devuelve el elemento
 def unaAlAzar(lista):
-    elemento = random.choice(lista) #Busca un elemento aleatorio de la lista
+    elemento = random.choice(lista)
     return elemento
 
-
+#Chequea si la palabra es correcta o no y le asigna un puntaje
 def esCorrecta(palabraUsuario, letra, item, items, listaDeTodo):
-    if len(palabraUsuario)>0: #si el usuario toca solo enter le va a restar 5 puntos
-        pal = items.index(item) #Toma el indice del item en la lista de items
-        if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[pal]: #Si la palabraUsuario cumple con la condicion de la primer letra y esta en listaDeTodo, devuelve el puntaje
-            return 10 
-        else:
+    if len(palabraUsuario)>0:
+
+#Toma el indice del item en la lista de items
+       posicion = items.index(item)
+
+#Si la palabraUsuario cumple con la condicion de la primer letra y esta en listaDeTodo
+#Devuelve puntaje positivo. De lo contrario negativo
+       if palabraUsuario[0]==letra and palabraUsuario in listaDeTodo[posicion]:
+            return 10
+       else:
             return -5
     else:
         return -5
-    
 
+
+#Hace que la PC elija palabras para jugar con el jugador
 def juegaCompu(letraAzar, listaDeTodo):
     salida=[]
+
+#Recorre la lista de todas las palabras y luego la lista de item
     for item in listaDeTodo:
         lista = []
+
         for palabra in item:
+
+#Agrega a "lista" la palabra que empiece con la misma letra inicial
             if palabra[0]==letraAzar:
                 lista.append(palabra)
 
-        if len(lista)>0:
+#Agrega a la lista "salida" el elemento agregado a "lista"
+        if len(lista)>0:vb
             salida.append(unaAlAzar(lista))
 
         else:
             salida.append(" ")
 
-    print (salida)
+#devuelve el elemento en "salida"
     return salida
 
 
-def leoLista (nombre): #Funcion LeoLista que pasaron los profes
-    f = open(nombre+".txt", "r")
-    lista=[]
-    lineas=int(f.readline())
-    for i in range(lineas):
-        linea=f.readline()
-        numeros.append(int(linea))
-    f.close()
-    
-    return lista
+#Funcion que nos permite abrir distintos archivos de texto y leerlos
+#Nos permite agregar mas palabras y categorias al juego
+def LeoLista(archivo_txt):
+    stop_words=open(archivo_txt,'r')
+    lineas = [linea.split() for linea in stop_words]
+    total=list()
+
+    for linea in lineas:
+        total+=linea
+
+    return total
