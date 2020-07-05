@@ -1,9 +1,9 @@
-def leoLista(nombre):
-    archivo = open (nombre+".txt","r")
-    lista=[]
-    
-    for linea in archivo.readlines():
-        lista.append(linea[:-1])
-    archivo.close()
-   
-   return lista
+def LeoLista(archivo_txt):
+    stop_words=open(archivo_txt,'r')
+    lineas = [linea.split() for linea in stop_words]
+    total=list()
+
+    for linea in lineas:
+        total+=linea
+
+    return total
